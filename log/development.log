@@ -1,0 +1,173 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCourses (20180725214037)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725214037_create_courses.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725214037_create_courses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725214037"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStudents (20180725214139)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a258d82422"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+)[0m
+  ↳ db/migrate/20180725214139_create_students.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_students_on_course_id" ON "students" ("course_id")[0m
+  ↳ db/migrate/20180725214139_create_students.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725214139"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 21:52:34.434052"], ["updated_at", "2018-07-25 21:52:34.434052"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "San Faldo"], ["description", "Chuck Norris can read all encrypted data, because nothing can hide from Chuck Norris."], ["created_at", "2018-07-25 21:52:35.185093"], ["updated_at", "2018-07-25 21:52:35.185093"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCourse Create (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Banaro Island"], ["description", "For Chuck Norris, NP-Hard = O(1)."], ["created_at", "2018-07-25 21:52:35.188072"], ["updated_at", "2018-07-25 21:52:35.188072"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCourse Create (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Dawn Island"], ["description", "No statement can catch the ChuckNorrisException."], ["created_at", "2018-07-25 21:52:35.190117"], ["updated_at", "2018-07-25 21:52:35.190117"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Baba"], ["last_name", "Eltdown Shards"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.211009"], ["updated_at", "2018-07-25 21:52:35.211009"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Nail"], ["last_name", "Necronomicon"], ["course_id", 2], ["created_at", "2018-07-25 21:52:35.214525"], ["updated_at", "2018-07-25 21:52:35.214525"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Guru"], ["last_name", "Book of Eibon"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.217404"], ["updated_at", "2018-07-25 21:52:35.217404"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Nappa"], ["last_name", "De Vermis Mysteriis"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.220281"], ["updated_at", "2018-07-25 21:52:35.220281"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "King Vegeta"], ["last_name", "Eltdown Shards"], ["course_id", 1], ["created_at", "2018-07-25 21:52:35.224993"], ["updated_at", "2018-07-25 21:52:35.224993"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Pilaf"], ["last_name", "De Vermis Mysteriis"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.228083"], ["updated_at", "2018-07-25 21:52:35.228083"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Videl"], ["last_name", "De Vermis Mysteriis"], ["course_id", 2], ["created_at", "2018-07-25 21:52:35.231189"], ["updated_at", "2018-07-25 21:52:35.231189"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Android 16"], ["last_name", "Pnakotic Manuscripts"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.233924"], ["updated_at", "2018-07-25 21:52:35.233924"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Android 18"], ["last_name", "Pnakotic Manuscripts"], ["course_id", 3], ["created_at", "2018-07-25 21:52:35.236744"], ["updated_at", "2018-07-25 21:52:35.236744"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "course_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Gogeta"], ["last_name", "De Vermis Mysteriis"], ["course_id", 2], ["created_at", "2018-07-25 21:52:35.239587"], ["updated_at", "2018-07-25 21:52:35.239587"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
